@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CaptchaGame</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/ac/41/fe/ac41fe6cf482dcca2a1c1331559e961b.png" />
+    
+    <style type="text/css">
+      body {
+        background-color: rgb(99, 99, 99);
+      }
+      h2 {color: rgb(0, 255, 187);
+         font-family: 'Roboto Mono', monospace;
+        }
+      h3 {color: rgb(0, 255, 187);
+        font-family: 'Roboto Mono', monospace;
+      }
+      .container {
+        text-align: center;
+        max-width: 500px;
+        padding-top: 100px;
+        font-family: 'Roboto Mono', monospace;
+      }
+      .message {color: rgb(240, 88, 7);
+        font-family: 'Roboto Mono', monospace;
+      }
+      .score {color: rgb(199, 243, 3);
+        font-family: 'Roboto Mono', monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>CaptchaGame</h2>
+      <h3 class='score'> Score: {{score}}</h3>
+      <h3 class='score'> Record: {{record}}</h3>
+      <h3 class='message'> {{message}}</h3>
+      <img style='margin-top: 20px;' src="{{url_for('static', filename='captcha.png')}}" align="middle" />
+      <form action="/" method="post">
+        <div class="input-group mb-3"></div>
+          <input style='margin-top: 20px;' type="text" class="form-control" placeholder="Are you a robot?" id='response' name='response'>
+          <div class="input-group-append">
+            <button style='margin-top: 20px;' class="btn btn-dark" type="submit">Send</button>
+          </div>
+        </div>
+    </form>
+      <h2></h2>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+
+    <script>
+      var input = document.getElementById('response');
+      input.focus();
+      input.select();
+      </script>
+  </body>

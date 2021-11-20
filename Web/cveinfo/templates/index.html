@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CVSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://nvd.nist.gov/site-media/images/cvss_logo.png" />
+    
+    <style type="text/css">
+      body {
+        background-color: rgb(46, 2, 2);
+      }
+      h2 {color: rgb(238, 79, 79);
+         font-family: 'Roboto Mono', monospace;
+        }
+      h3 {color: rgb(0, 29, 21);
+        font-family: 'Roboto Mono', monospace;
+      }
+      .container {
+        margin-top: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <center><div class="container">
+        <img style='margin-inline-end: 20px;' src="https://nvd.nist.gov/site-media/images/cvss_logo.png" align="middle" width="300"/>
+        <h2>CVE information facility - :) - GiveMeCVSS API</h2>
+      <form action="/get_cvss" method="get">
+        <div class="input-group mb-3"></div>
+          <input style='margin-top: 20px;' type="text" class="form-control" placeholder="CVE-2021-6769" id='cveid' name='cveid'>
+          <div class="input-group-append">
+            <button style='margin-top: 20px;' class="btn btn-dark" type="submit">Send</button>
+            <button style='margin-top: 20px; margin-right: 17px;' type="button" class="btn btn-warning" onclick="download()">Download Source</button>
+          </div>
+        </div>
+        </form>
+      <h2></h2>
+    </div>
+</center>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+
+    <script>
+      var input = document.getElementById('response');
+      input.focus();
+      input.select();
+      function download()
+    {   
+     location.href = "/download";
+    } 
+      </script>
+  </body>
